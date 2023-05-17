@@ -1,0 +1,21 @@
+@use "../util" as u;
+
+.header {
+  box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.1);
+  &__nav {
+    &-list {
+      @include u.flex(row, space-between, center);
+      width: 100%;
+      padding: 1.3em 4em;
+    }
+    &-logo {
+      font-size: 2em;
+      font-weight: 700;
+    }
+
+    &-link a {
+      font-size: 1.6em;
+      color: #333;
+    }
+  }
+}

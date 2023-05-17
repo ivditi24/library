@@ -1,0 +1,83 @@
+@use "../util/" as u;
+
+.form {
+  @include u.flex(column, center, center);
+  max-width: 350px;
+  background-color: rgb(59, 59, 146);
+  padding: 1em;
+  gap: 1em;
+  border-radius: 9px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.3s;
+  z-index: 1;
+
+  &.open {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__input {
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    border-radius: 7px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+
+    &::placeholder {
+      color: white;
+    }
+
+    &-field {
+      @include u.flex(row, space-between, center);
+      width: 100%;
+
+      label {
+        font-size: 1.2rem;
+        color: white;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  // From https://moderncss.dev/pure-css-custom-checkbox-style/
+
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: inherit;
+    color: white;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.1em solid currentColor;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em white;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+
+  &__submit {
+    font-size: 1.3rem;
+    padding: 0.5em 1em;
+    background-color: rgb(255, 151, 5);
+    color: white;
+  }
+}

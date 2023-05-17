@@ -1,0 +1,37 @@
+@use "../util/" as u;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  @include u.flex(column, space-between, space-between);
+  min-height: 100vh;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
+  transition: 0.3s;
+  position: relative;
+}

@@ -1,0 +1,212 @@
+.header {
+  box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.header__nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.3em 4em;
+}
+.header__nav-logo {
+  font-size: 2em;
+  font-weight: 700;
+}
+.header__nav-link a {
+  font-size: 1.6em;
+  color: #333;
+}
+
+.main {
+  flex: 1;
+  padding: 1.3em 3em;
+}
+.main__btn {
+  padding: 0.7em 1em;
+  font-size: 1.3rem;
+  background-color: rgb(86, 86, 237);
+  color: white;
+  font-weight: 700;
+  margin-bottom: 2em;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.main__btn span {
+  margin-right: 8px;
+}
+.main__btn:hover {
+  background-color: white;
+  color: rgb(86, 86, 237);
+}
+
+.library {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1em;
+}
+.library__book {
+  background-color: rgb(96, 239, 96);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 1.3em 0;
+  border-radius: 9px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+}
+.library__book-read, .library__book-remove {
+  width: 70%;
+  padding: 0.5em 0;
+  font-size: 1.1rem;
+}
+.library__book-read:hover, .library__book-remove:hover {
+  background-color: #6f6f6f;
+  color: white;
+}
+.library__book-remove {
+  background-color: red;
+}
+.library__book-remove:hover {
+  background-color: #6f6f6f;
+  color: white;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.overlay.open {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 350px;
+  background-color: rgb(59, 59, 146);
+  padding: 1em;
+  gap: 1em;
+  border-radius: 9px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.3s;
+  z-index: 1;
+}
+.form.open {
+  transform: translate(-50%, -50%) scale(1);
+}
+.form__input {
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  border-radius: 7px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+.form__input::-moz-placeholder {
+  color: white;
+}
+.form__input::placeholder {
+  color: white;
+}
+.form__input-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.form__input-field label {
+  font-size: 1.2rem;
+  color: white;
+  font-size: 1.1rem;
+}
+.form input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  font-size: inherit;
+  color: white;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.1em solid currentColor;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+.form input[type=checkbox]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em white;
+  transform-origin: bottom left;
+  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.form input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+.form__submit {
+  font-size: 1.3rem;
+  padding: 0.5em 1em;
+  background-color: rgb(255, 151, 5);
+  color: white;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
+  transition: 0.3s;
+  position: relative;
+}/*# sourceMappingURL=style.css.map */
